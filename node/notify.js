@@ -6,7 +6,9 @@ let Utils = require('./utils');
 let SERVICE_HOSTNAME = 'https://us-central1-notify-b7652.cloudfunctions.net/sendNotification';
 
 module.exports = function(text, title) {
+
   let keys = Utils.getRegFile().split(/\n+/).filter(key => key);
+
   if (!keys.length) {
     console.log(
       '[notify] No keys have been registered.' +
