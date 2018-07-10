@@ -1,9 +1,9 @@
-var fs = require('fs');
+let fs = require('fs');
 
-var Utils = require('./utils');
+let Utils = require('./utils');
 
 module.exports = function(key) {
-  var existingFile = Utils.getRegFile();
+  let existingFile = Utils.getRegFile();
 
   if (existingFile.indexOf(key + '\n') === -1) {
     console.log(
@@ -12,7 +12,7 @@ module.exports = function(key) {
     return;
   }
 
-  var newContents = existingFile.replace(key + '\n', '');
+  let newContents = existingFile.replace(key + '\n', '');
   Utils.writeToRegFile(newContents);
   console.log(
     '[notify] The registration key ' + 

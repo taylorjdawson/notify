@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-var program = require('commander');
+let program = require('commander');
 
-var packageJson = require('./package.json');
-var register = require('./register');
-var unregister = require('./unregister');
-var notify = require('./notify');
+let packageJson = require('./package.json');
+let register = require('./register');
+let unregister = require('./unregister');
+let notify = require('./notify');
 
 program.version(packageJson.version)
   .option('-r, --register [key]', 'Register')

@@ -1,11 +1,11 @@
-var fs = require('fs');
+let fs = require('fs');
 const yaml = require('js-yaml');
 
-var getUserHome = function() {
+let getUserHome = function() {
   return process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
 };
 
-var getRegFilename = function() {
+let getRegFilename = function() {
   return getUserHome() + '/.notifyreg.yml';
 };
 

@@ -1,12 +1,12 @@
-var fs = require('fs');
-var restler = require('restler');
+let fs = require('fs');
+let restler = require('restler');
 
-var Utils = require('./utils');
+let Utils = require('./utils');
 
-var SERVICE_HOSTNAME = 'https://us-central1-notify-b7652.cloudfunctions.net/sendNotification';
+let SERVICE_HOSTNAME = 'https://us-central1-notify-b7652.cloudfunctions.net/sendNotification';
 
 module.exports = function(text, title) {
-  var keys = Utils.getRegFile().split(/\n+/).filter(key => key);
+  let keys = Utils.getRegFile().split(/\n+/).filter(key => key);
   if (!keys.length) {
     console.log(
       '[notify] No keys have been registered.' +
@@ -14,7 +14,7 @@ module.exports = function(text, title) {
     );
     return;
   }
-  for (var key of keys) {
+  for (let key of keys) {
     console.log('[notify] Notifying ' + key);
     restler.get(SERVICE_HOSTNAME, {
       query: {
