@@ -1,5 +1,6 @@
 let fs = require('fs');
 const yaml = require('js-yaml');
+
 const yamlSchema = {'keys': {}, 'aliases': {}};
 
 let getUserHome = function() {
@@ -7,7 +8,7 @@ let getUserHome = function() {
 };
 
 let getRegFilename = function() {
-  return getUserHome() + '/text';//'/.notifyreg';
+  return getUserHome() + '/.notifyreg';
 };
 
 let isYaml = function(regFile) {
@@ -30,7 +31,7 @@ let convertToYaml = function(regFile) {
 module.exports = {
 
   // Returns JSON object
-  getRegFile: function() {
+  getYamlRegFileOrMigrate: function() {
     let regFilename = getRegFilename();
 
     // Empty template overwritten if regFile exists
