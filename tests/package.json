@@ -1,0 +1,9 @@
+{
+	"main": "index.js",
+	"scripts": {
+	     "lint": "eslint ../node/**",
+	     "test": "jest node",
+     "coverage": "jest --collectCoverageFrom=node/**.js --coverage node"
+    },
+	"author": "Taylor Dawson"
+}
