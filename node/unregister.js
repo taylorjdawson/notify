@@ -3,7 +3,7 @@ let fs = require('fs');
 let Utils = require('./utils');
 
 module.exports = function(key) {
-  let existingFile = Utils.getRegFile();
+  let existingFile = Utils.getYamlRegFileOrMigrate();
 
   if (existingFile.indexOf(key + '\n') === -1) {
     console.log(

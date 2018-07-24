@@ -1,4 +1,4 @@
-let fs = require('fs');
+let fs = require('fs'); // TODO: Might need to be const
 const yaml = require('js-yaml');
 
 const yamlSchema = {'keys': {}, 'aliases': {}};

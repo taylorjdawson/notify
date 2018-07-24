@@ -3,7 +3,7 @@ let fs = require('fs');
 let Utils = require('./utils');
 
 module.exports = function(key, alias=null) {
-  let existingFile = Utils.getRegFile();
+  let existingFile = Utils.getYamlRegFileOrMigrate();
   existingFile.keys[key] = null;
 
   if(alias) {
@@ -14,5 +14,5 @@ module.exports = function(key, alias=null) {
 
 
   Utils.writeToRegFile(existingFile + key + '\n');
-  console.log('[notify] Your registration code has been saved to ~/.notifyreg.yml');
+  console.log('[notify] Your registration code has been saved to ~/.notifyreg');
 };
