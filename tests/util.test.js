@@ -3,12 +3,17 @@ const mock = require('mock-fs');
 const fs = require('fs');
 
 const USER_HOME = process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+
 let REG_FILE = USER_HOME + '/.notifyreg';
-let mockUserHomeDir = {};
-mockUserHomeDir[USER_HOME] = {};
+
+// mock-fs/jest fix (hack)
+MISSING_NODE_FILE = './node_modules/jest-util/node_modules/callsites/index.js';
+let mockDir = {};
+mockDir[MISSING_NODE_FILE] = fs.readFileSync(MISSING_NODE_FILE);
+mockDir[USER_HOME] = {};
 
 beforeEach(() => {
-    mock(mockUserHomeDir);
+    mock(mockDir);
 });
 
 afterEach(() => {
@@ -44,14 +49,3 @@ describe('Contructs file system containing old format file', () => {
 
 
 
-/*
-mock(mockUserHomeDir);
-
-let regFile = utils.getYamlRegFileOrMigrate();
-
-// utils.writeToRegFile(regFile);
-console.log(`Before Rest: ${fs.existsSync(REG_FILE)}`);
-mock.restore();
-
-console.log(`After Rest: ${fs.readFileSync('/home/injerto/.notifyreg', {encoding: 'utf8'})}`);
-*/
