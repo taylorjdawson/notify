@@ -9,7 +9,7 @@ let REG_FILE = USER_HOME + '/.notifyreg';
 // mock-fs/jest fix (hack)
 MISSING_NODE_FILE = './node_modules/jest-util/node_modules/callsites/index.js';
 let mockDir = {};
-mockDir[MISSING_NODE_FILE] = fs.readFileSync(MISSING_NODE_FILE);
+//mockDir[MISSING_NODE_FILE] = fs.readFileSync(MISSING_NODE_FILE);
 mockDir[USER_HOME] = {};
 
 beforeEach(() => {

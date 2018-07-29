@@ -6,7 +6,7 @@ const utils = require('../node/utils');
 const USER_HOME = process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
 
 // mock-fs/jest fix (hack)
-MISSING_NODE_FILE = './node_modules/jest-util/node_modules/callsites/index.js';
+MISSING_NODE_FILE = './node_modules/callsites/index.js';
 let mockDir = {};
 mockDir[MISSING_NODE_FILE] = fs.readFileSync(MISSING_NODE_FILE);
 mockDir[USER_HOME] = {};

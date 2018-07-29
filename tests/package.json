@@ -2,16 +2,15 @@
 	"main": "index.js",
 	"scripts": {
 		"lint": "eslint ../node/**",
-		"test": "jest node",
-		"coverage": "jest --collectCoverageFrom=node/**.js --coverage node"
+		"test": "jest .",
+		"coverage": "jest --collectCoverageFrom=../node/**.js --coverage node"
 	},
-	"author": "Taylor Dawson",
+	"author": "",
 	"devDependencies": {
-		"eslint": "^4.19.1",
-		"eslint-config-airbnb-base": "^13.0.0",
-		"eslint-plugin-import": "^2.13.0",
-		"eslint-plugin-jest": "^21.18.0",
-		"jest": "^23.4.1",
+		"jest": "^23.4.2",
 		"mock-fs": "^4.5.0"
+	},
+	"jest": {
+		"testURL" : "http://localhost/"
 	}
 }
