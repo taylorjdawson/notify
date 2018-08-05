@@ -5,7 +5,7 @@ let Utils = require('./utils');
 
 let SERVICE_HOSTNAME = 'https://us-central1-notify-b7652.cloudfunctions.net/sendNotification';
 
-module.exports = function(text, title) {
+module.exports = function (text, title) {
 
   let keys = Utils.getRegFile().split(/\n+/).filter(key => key);
 
@@ -24,7 +24,7 @@ module.exports = function(text, title) {
         text: text,
         title: title,
       },
-    }).on('complete', function(result, response) {
+    }).on('complete', function (result, response) {
       if (result.success) {
         console.log('[notify] Successfully notifed ' + key);
       }
