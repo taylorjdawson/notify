@@ -1,15 +1,15 @@
 let Utils = require('./utils');
 
 module.exports = function (key, alias = null) {
-  let existingFile = Utils.getYamlRegFileOrMigrate();
-  existingFile.keys[key] = null;
+  let regFile = Utils.getYamlRegFileOrMigrate();
+  regFile.keys[key] = null;
 
   // If an alias is provided added it
   if (alias) {
-    existingFile.aliases[alias] = key;
-    existingFile.keys[key] = alias;
+    regFile.aliases[alias] = key;
+    regFile.keys[key] = alias;
   }
 
-  Utils.writeToRegFile(existingFile);
+  Utils.writeToRegFile(regFile);
   console.log('[notify] Your registration code has been saved to ~/.notifyreg');
 };

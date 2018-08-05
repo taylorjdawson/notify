@@ -19,15 +19,10 @@ module.exports = function (key) {
 
     Utils.writeToRegFile(regFile);
 
-    console.log(
-      '[notify] The registration key ' +
-      key +
-      ' has been removed from ~/.notifyreg'
-    );
+    console.log(`[notify] The registration key ${key} has 
+    been removed from ~/.notifyreg`);
 
   } else {
-    console.log(
-      '[notify] The registration key ' + key + ' was never registered.'
-    );
+    console.error(`[notify] The registration key ${key} was never registered.`);
   }
 };

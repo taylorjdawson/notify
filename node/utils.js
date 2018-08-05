@@ -39,7 +39,8 @@ module.exports = {
 
     if (fs.existsSync(regFilename)) {
 
-        regFile = yaml.safeLoad(fs.readFileSync(regFilename, {encoding: 'utf8'}));
+        regFile = yaml.safeLoad(
+          fs.readFileSync(regFilename, {encoding: 'utf8'}));
 
         regFile = isYaml(regFile) ? regFile : convertToYaml(regFile);
     }

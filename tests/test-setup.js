@@ -3,7 +3,8 @@ const fs = require('fs');
 
 module.exports = {
   getMockDir: function () {
-    const USER_HOME = process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME'];
+    const USER_HOME =
+      process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME'];
     // mock-fs/jest fix (hack)
     MISSING_NODE_FILE = './node_modules/callsites/index.js';
     let mockDir = {};
