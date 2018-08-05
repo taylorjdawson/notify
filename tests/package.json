@@ -7,10 +7,11 @@
 	},
 	"author": "",
 	"devDependencies": {
+		"eslint-plugin-import": "^2.13.0",
 		"jest": "^23.4.2",
 		"mock-fs": "^4.5.0"
 	},
 	"jest": {
-		"testURL" : "http://localhost/"
+		"testURL": "http://localhost/"
 	}
 }

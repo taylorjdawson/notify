@@ -4,7 +4,7 @@ const yaml = require('js-yaml');
 const yamlSchema = {'keys': {}, 'aliases': {}};
 
 let getUserHome = function() {
-  return process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+  return process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME'];
 };
 
 let getRegFilename = function() {
